@@ -38,24 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
       value: 211,
       date: DateTime.now(),
     ) ,
-    Transaction(
-      id: 't2',
-      title: 'Conta de Luz',
-      value: 211,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Conta de Luz',
-      value: 211,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Conta de Luz',
-      value: 211,
-      date: DateTime.now(),
-    )
   ];
 
   _addTransaction(String title, double value){
@@ -69,6 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _opentrasactionFormModal(BuildContext context) {
