@@ -12,7 +12,25 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return MaterialApp(
+      home: MyHomePage(),
+      theme: ThemeData(
+        fontFamily: 'Outfit',
+        //useMaterial3: false,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepPurple,
+          foregroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+            fontFamily: 'Quicksand' 
+          )
+        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.indigo,
+          primary: Colors.deepPurple,
+          secondary: Colors.indigo,
+        ),
+      ),
+    );
   }
 }
 
@@ -68,7 +86,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Despesas Pessoais'),
+          backgroundColor: Theme.of(context).primaryColor,
+          title: Text(
+            'Despesas Pessoais',
+            style: TextStyle(color: Colors.white),
+          ),
           actions: [
             IconButton(
               onPressed: () => _opentrasactionFormModal(context), 
