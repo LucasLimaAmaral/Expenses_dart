@@ -20,9 +20,6 @@ class ExpensesApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.deepPurple,
           foregroundColor: Colors.white,
-          titleTextStyle: TextStyle(
-            fontFamily: 'Quicksand' 
-          )
         ),
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.indigo,
@@ -43,19 +40,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _transactions = [
-    Transaction(
-      id: 't1',
-      title: 'Novo Tenis',
-      value: 310,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Conta de Luz',
-      value: 211,
-      date: DateTime.now(),
-    ) ,
+  final _transactions = <Transaction>[
+    // Transaction(
+    //   id: 't1',
+    //   title: 'Novo Tenis',
+    //   value: 310,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Conta de Luz',
+    //   value: 211,
+    //   date: DateTime.now(),
+    // ) ,
   ];
 
   _addTransaction(String title, double value){
