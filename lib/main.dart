@@ -26,6 +26,15 @@ class ExpensesApp extends StatelessWidget {
           primary: Colors.deepPurple,
           secondary: Colors.indigo,
         ),
+        textTheme: ThemeData.light().textTheme.copyWith(
+          titleLarge: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+          
+        ),
+        
       ),
     );
   }
@@ -39,38 +48,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _transactions = <Transaction>[
-    Transaction(
-      id: 't0',
-      title: 'Conta antiga',
-      value: 400,
-      date: DateTime.now().subtract(Duration(days: 33)),
-    ),
-    Transaction(
-      id: 't1',
-      title: 'Novo Tenis',
-      value: 310,
-      date: DateTime.now().subtract(Duration(days: 3)),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Conta de Luz',
-      value: 211,
-      date: DateTime.now().subtract(Duration(days: 4)),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'Cartao de credito',
-      value: 100000,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't4',
-      title: 'Lanche',
-      value: 11.14,
-      date: DateTime.now(),
-    ),
-  ];
+  final _transactions = <Transaction>[];
 
   List<Transaction> get _recentTransactions {
     return _transactions.where((tr) {
@@ -80,12 +58,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
-  _addTransaction(String title, double value) {
+  _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
         id: Random().nextDouble().toString(),
         title: title,
         value: value,
-        date: DateTime.now());
+        date: date
+      );
 
     setState(() {
       _transactions.add(newTransaction);
